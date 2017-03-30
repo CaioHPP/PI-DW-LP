@@ -1,0 +1,43 @@
+
+body {
+    font-family: "Lucida Console";
+    color: #D19275;
+    position: fixed;
+    background-size: cover;
+    margin: 0px;
+    background-image: url(Imagem.jpg);
+    background-attachment: fixed;
+    height: 100vh;
+    
+    font-size: 2vw;
+    background-repeat: no-repeat;
+    width: 100vw;
+    
+}
+section { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+}
+
+img{
+    max-width:1000px;
+    max-height:400px;
+    width: auto;
+    height: auto;
+    position: absolute;
+    left:17%;
+    top:35%;
+
+}
+#divCenter{
+    position:absolute;
+    width: 200px;
+    left:55%;
+    top:50%;
+    margin-left:-120px;
+    margin-top:-45px;
+
+}
