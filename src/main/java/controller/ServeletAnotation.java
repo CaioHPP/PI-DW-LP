@@ -49,7 +49,7 @@ public class ServeletAnotation extends HttpServlet {
             throws ServletException, IOException {
         
              
-        RequestDispatcher dispatcher = req.getRequestDispatcher("SolicitaCadastro.html");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("SolicitaCadastro.jsp");
             dispatcher.forward(req, resp);
         processRequest(req, resp);
     }

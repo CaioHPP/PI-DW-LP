@@ -23,12 +23,12 @@
             <h1><br/>Quem Somos?</h1>
         </section>
         <section class="vh100">
-            <p>Escola de MÃºsica Dom Zelittu's de Minas Gerais foi 
-                fundada na gestÃ£o de David Mineirinho, a partir de 
-                ideais que buscavam canalizar o potencial artÃ­stico da nossa terra. 
-                Ao longo dos seus 13 anos, a Escola de MÃºsica tem se 
-                esforÃ§ado em criar meios para melhor capacitar o aluno 
-                que estÃ¡ sendo formado pela nossa Unidade. </p>
+            <p>Escola de Música Dom Zelittu's de Minas Gerais foi 
+                fundada na gestão de David Mineirinho, a partir de 
+                ideais que buscavam canalizar o potencial artístico da nossa terra. 
+                Ao longo dos seus 13 anos, a Escola de Música tem se 
+                esforçado em criar meios para melhor capacitar o aluno 
+                que está sendo formado pela nossa Unidade. </p>
         </section>
         <section class="vh100">
 
@@ -37,16 +37,16 @@
 
         </section>
         <section class="vh100"><p> 
-                O grau de abrangÃªncia dos programas oferecidos e o grau de excelÃªncia do 
-                nosso corpo docente nos colocam entre os centros de melhor qualificaÃ§Ã£o no PaÃ­s. 
-                Temos recebido o reconhecimento em diversas instÃ¢ncias; 
-                fomos identificados por consultores internacionais, pela Ã³tima qualidade do ensino.</p>
+                O grau de abrangência dos programas oferecidos e o grau de excelência do 
+                nosso corpo docente nos colocam entre os centros de melhor qualificação no País. 
+                Temos recebido o reconhecimento em diversas instâncias; 
+                fomos identificados por consultores internacionais, pela ótima qualidade do ensino.</p>
         </section>
         <section class="vh100">
-      <h1>Solicite sua MatrÃ­cula!</h1>
+      <h1>Solicite sua Matrícula!</h1>
     </section>
         <section class="vh100">
-            <p> Oferecemos aulas de ViolÃ£o, Guitarra, Baixo, Bateria, Contra-Baixo, Saxofone, Flauta HarmÃ´nica, Piano e vÃ¡rias outras!</p>
+            <p> Oferecemos aulas de Violão, Guitarra, Baixo, Bateria, Contra-Baixo, Saxofone, Flauta Harmônica, Piano e várias outras!</p>
         </section>
         <section class="p">
             <form action="gerenciamento" method="get" name="solicitar">
@@ -56,8 +56,9 @@
                 <br/>
             </form>
             
-            <p id="pmenor">InformaÃ§Ãµes de Contato: <br/>44 99817-0167 ou 44 99845-5332<br/></p> <a href="https://mail.google.com/mail/u/0/#inbox?compose=15b2161c614ec3db" id="pmenor" ><address>mckcamilotto@gmail.com</address></a>
+            <p id="pmenor">Informações de Contato: <br/>44 99817-0167 ou 44 99845-5332<br/></p> <a href="https://mail.google.com/mail/u/0/#inbox?compose=15b2161c614ec3db" id="pmenor" ><address>mckcamilotto@gmail.com</address></a>
         </section>
 
     </body>
 </html>
+

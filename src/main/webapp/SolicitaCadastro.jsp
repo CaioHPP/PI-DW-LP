@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>SolicitaÃ§Ã£o de Cadastro</title>
+        <title>Solicitação de Cadastro</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link type="text/css" href="css.css" rel="stylesheet">
     </head>
