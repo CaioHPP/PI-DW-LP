@@ -85,7 +85,6 @@ button {
 #popUpYes:hover
 {
    background: url(botaoAtivado.png) no-repeat, left top;
-   border: none;
-    
+     border: none;
 }
 

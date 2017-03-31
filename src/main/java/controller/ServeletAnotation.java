@@ -47,10 +47,11 @@ public class ServeletAnotation extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        
-       
+        String solicitar = req.getParameter("solicitar");
+        System.out.println("request");
+        System.out.println(solicitar);
              
-        RequestDispatcher dispatcher = req.getRequestDispatcher("SolicitaCadastro.html");
+        RequestDispatcher dispatcher = req.getRequestDispatcher(solicitar);
             dispatcher.forward(req, resp);
         processRequest(req, resp);
     }
