@@ -5,8 +5,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link type="text/css" href="CSS/css.css" rel="stylesheet">
     </head>
-    <body>
-        <img  src="../Imagens/Banner.png" alt="" > 
+    <body class="backin">
+        <img  src="Imagens/Banner.png" alt="" > 
         <div id="divCenter">
 
               <form name="input" action="EscolaDeMusica" method="post" >

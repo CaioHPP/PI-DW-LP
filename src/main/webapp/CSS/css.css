@@ -4,6 +4,12 @@ body {
     margin: 0;
     font-family: 'Raleway', sans-serif;
 }
+.backin{
+    background-image: url(../Imagens/Imagem.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
 
 
 
@@ -64,6 +70,7 @@ img{
     top:50%;
     margin-left:-120px;
     margin-top:-45px;
+    color: white
 
 }
 #pmenor{
