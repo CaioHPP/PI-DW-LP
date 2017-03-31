@@ -8,7 +8,7 @@ and open the template in the editor.
     <head>
         <title>Solicitação de Cadastro</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link type="text/css" href="css.css" rel="stylesheet">
+        <link type="text/css" href="CSS/css.css" rel="stylesheet">
     </head>
     <body>
         <section class="vh100">

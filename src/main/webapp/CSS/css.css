@@ -36,16 +36,16 @@ section:nth-of-type(odd) {
     text-shadow: 0 0 5px rgba(0,0,0,0.4); 
 }
 section:nth-child(1) { 
-    background-image: url(Guitar.jpg); 
+    background-image: url(../Imagens/Guitar.jpg); 
 }
 section:nth-child(3) { 
-    background-image: url(Violao.jpg); 
+    background-image: url(../Imagens/Violao.jpg); 
 }
 section:nth-child(5) { 
-    background-image: url(Drum.jpg); 
+    background-image: url(../Imagens/Drum.jpg); 
 }
 section:nth-child(7) { 
-    background-image: url(Imagem.jpg); 
+    background-image: url(../Imagens/Imagem.jpg); 
 }
 img{
     max-width:1000px;
@@ -76,7 +76,7 @@ button {
     height:500px;
     font-weight:bold;
     
-    background: url(botao.png) no-repeat, left top;
+    background: url(../Imagens/botao.png) no-repeat, left top;
     border: none;
     
 }
@@ -84,7 +84,7 @@ button {
 
 #popUpYes:hover
 {
-   background: url(botaoAtivado.png) no-repeat, left top;
+   background: url(../Imagens/botaoAtivado.png) no-repeat, left top;
      border: none;
 }
 
