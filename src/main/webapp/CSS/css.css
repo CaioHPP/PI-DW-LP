@@ -8,7 +8,7 @@ body {
     background-image: url(../Imagens/Imagem.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    
+
 }
 
 
@@ -82,16 +82,48 @@ button {
     width:1000px;
     height:500px;
     font-weight:bold;
-    
+
     background: url(../Imagens/botao.png) no-repeat, left top;
     border: none;
-    
-}
 
+}
+#h1{
+    height: 100vh; 
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+    flex-direction: column;
+    padding: 2vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+    font-size: 3vw; 
+
+}
 
 #popUpYes:hover
 {
-   background: url(../Imagens/botaoAtivado.png) no-repeat, left top;
-     border: none;
+    background: url(../Imagens/botaoAtivado.png) no-repeat, left top;
+    border: none;
+}
+#form{
+        height: 100vh; 
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+    flex-direction: column;
+    padding: 2vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+    font-size: 2vw; 
+    
+
 }
 
