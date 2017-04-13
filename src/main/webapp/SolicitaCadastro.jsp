@@ -37,16 +37,20 @@ and open the template in the editor.
         <section id="form">
             
             <form action="" method="post">
-                Nome: <input type="text" name="nome" >
-                Telefone: <input type="text" name="tel" id="telefone" size="20" maxlength="14" onkeypress="mascara(this)"><br/>
-                Sexo:         
-                Masculino <input type="radio" name="genero">
-                Feminino <input type="radio" name="genero"><br/>
-                CPF: <input type="text" name="cpf" id="cpf" maxlength="14" onkeypress="mascaracpf(this)">
-                E-mail: <input type="email" name="email"><br/>
-                Data de Nascimento: <input type="date" name="dataN">
-                Endereço: <input type="text" name="endereço">
+                Nome: <input type="text" name="nome" placeholder="Nome.." >
+                Telefone: <input type="text" name="tel" id="telefone" size="20" maxlength="14" onkeypress="mascara(this)" placeholder="Telefone.."><br/>
+               
+                CPF: <input type="text" name="cpf" id="cpf" maxlength="14" onkeypress="mascaracpf(this)" placeholder="CPF..">
+                E-mail: <input type="email" name="email" placeholder="E-mail.."><br/>
+                Endereço: <input type="text" name="endereço" placeholder="Endereço..">
+                <br/>
+                Data de Nascimento: <input type="date" name="dataN" placeholder="Data de Nascimento.."  ><br/>
                 
+                Sexo:         <br/>
+                Masculino <input type="radio" name="genero" value="Masculino" checked="">
+                Feminino <input type="radio" name="genero" value="Feminino"><br/>
+                <input type="reset" value="Limpar Dados">
+                <input type="submit" value="Próximo" > 
             </form>
         </section>
 

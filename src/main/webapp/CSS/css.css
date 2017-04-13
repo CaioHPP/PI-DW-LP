@@ -122,8 +122,54 @@ button {
     background-repeat: no-repeat;
     background-position: center top;
     background-attachment: fixed;
-    font-size: 2vw; 
+    font-size: 1.5vw; 
     
 
 }
+input[type=text] {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #A9A9A9;
+    border-radius: 4px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    
+    
+    color: black;
+}
+input[type=email] {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #A9A9A9;
+    border-radius: 4px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    
+    
+    color: black;
+}
+input[type=date] {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #A9A9A9;
+    border-radius: 4px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    
+    
+    color: black;
+}
 
+
+input:focus {
+    border: 3px solid #555;
+    box-shadow: 0 0 0 0;
+    
+    outline: 0;
+}
