@@ -40,12 +40,15 @@ and open the template in the editor.
                 Nome: <input type="text" name="nome" >
                 Telefone: <input type="text" name="tel" id="telefone" size="20" maxlength="14" onkeypress="mascara(this)"><br/>
                 Sexo:         
-                Masculino <input type="radio" name="genero">
-                Feminino <input type="radio" name="genero"><br/>
+                Masculino <input type="radio" name="genero" value="Masculino">
+                Feminino <input type="radio" name="genero" value="Feminino"><br/>
                 CPF: <input type="text" name="cpf" id="cpf" maxlength="14" onkeypress="mascaracpf(this)">
                 E-mail: <input type="email" name="email"><br/>
                 Data de Nascimento: <input type="date" name="dataN">
                 Endereço: <input type="text" name="endereço">
+                <br/>
+                <input type="reset" value="Limpar Dados">
+                <input type="submit" value="Próximo" > 
                 
             </form>
         </section>
