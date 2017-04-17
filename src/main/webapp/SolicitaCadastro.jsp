@@ -37,6 +37,7 @@ and open the template in the editor.
         <section id="form">
             
             <form action="" method="post">
+
                 Nome: <input type="text" name="nome" placeholder="Nome.." >
                 Telefone: <input type="text" name="tel" id="telefone" size="20" maxlength="14" onkeypress="mascara(this)" placeholder="Telefone.."><br/>
                
@@ -45,12 +46,14 @@ and open the template in the editor.
                 Endereço: <input type="text" name="endereço" placeholder="Endereço..">
                 <br/>
                 Data de Nascimento: <input type="date" name="dataN" placeholder="Data de Nascimento.."  ><br/>
-                
+
+                                
                 Sexo:         <br/>
                 Masculino <input type="radio" name="genero" value="Masculino" checked="">
                 Feminino <input type="radio" name="genero" value="Feminino"><br/>
                 <input type="reset" value="Limpar Dados">
-                <input type="submit" value="Próximo" > 
+                <input type="submit" value="Próximo" >
+                
             </form>
         </section>
 
