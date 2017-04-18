@@ -21,7 +21,7 @@ and open the template in the editor.
             }
             function mascaracpf(cpf) {
                 if (cpf.value.length === 3)
-                    cpf.value = cpf.value +"."; //quando começamos a digitar, o script irá inserir um parênteses no começo do campo.
+                    cpf.value = cpf.value + "."; //quando começamos a digitar, o script irá inserir um parênteses no começo do campo.
                 if (cpf.value.length === 7)
                     cpf.value = cpf.value + "."; //quando o campo já tiver 3 caracteres (um parênteses e 2 números) o script irá inserir mais um parênteses, fechando assim o código de área.
 
@@ -35,25 +35,33 @@ and open the template in the editor.
             <h1>Entre com seus dados</h1>
         </section>
         <section id="form">
-            
+           
             <form action="" method="post">
 
                 Nome: <input type="text" name="nome" placeholder="Nome.." >
                 Telefone: <input type="text" name="tel" id="telefone" size="20" maxlength="14" onkeypress="mascara(this)" placeholder="Telefone.."><br/>
-               
                 CPF: <input type="text" name="cpf" id="cpf" maxlength="14" onkeypress="mascaracpf(this)" placeholder="CPF..">
                 E-mail: <input type="email" name="email" placeholder="E-mail.."><br/>
                 Endereço: <input type="text" name="endereço" placeholder="Endereço..">
                 <br/>
                 Data de Nascimento: <input type="date" name="dataN" placeholder="Data de Nascimento.."  ><br/>
-
-                                
-                Sexo:         <br/>
-                Masculino <input type="radio" name="genero" value="Masculino" checked="">
-                Feminino <input type="radio" name="genero" value="Feminino"><br/>
+                <div class="panel">Sexo:         <br/>
+                    <input type="radio" name="genero" value="Masculino" checked=""><span>Masculino</span>
+                    <input type="radio" name="genero" value="Feminino"><span>Feminino</span><br/></div>
+                Instrumento Musical:
+                <select  name="instrumento">
+                    <option value="violao">Violão</option>
+                    <option value="guita">Guitarra</option>
+                    <option value="baixo">Baixo</option>
+                    <option value="bateria">Bateria</option>
+                    <option value="ctr-baixo">Contra-Baixo</option>
+                    <option value="flauta">Flauta Harmônica</option>
+                    <option value="piano">Piano</option>
+                    <option value="outro">Outro</option>
+                </select>
                 <input type="reset" value="Limpar Dados">
                 <input type="submit" value="Próximo" >
-                
+
             </form>
         </section>
 

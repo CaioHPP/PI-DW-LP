@@ -8,7 +8,6 @@
     <body class="backin">
         <img  src="Imagens/Banner.png" alt="" > 
         <div id="divCenter">
-
               <form name="input" action="EscolaDeMusica" method="post" >
                 Nome
                 <input type="text" name="nome" value=""><br/>

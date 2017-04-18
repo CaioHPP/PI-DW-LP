@@ -65,6 +65,7 @@ public class ServeletAnotation extends HttpServlet {
         String email = req.getParameter("email");
         String dataN = req.getParameter("dataN");
         String endereco = req.getParameter("endereço");
+        String instrumento = req.getParameter("instrumento");
 
         Cliente cliente = new Cliente();
 
@@ -94,8 +95,9 @@ public class ServeletAnotation extends HttpServlet {
         if (endereco != null) {
             cliente.setEndereco(endereco);
         }
+        cliente.setInstrumento(instrumento);
         cliente.setIdCliente(lista.size());
-
+       
         lista.add(cliente);
         System.out.println("DEU CERTO!");
         req.setAttribute("lista", lista);

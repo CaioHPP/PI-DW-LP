@@ -22,7 +22,7 @@ import javax.validation.constraints.Size;
 
 /**
  *
- * @author Caio Henrique
+ * @author Caio
  */
 @Entity
 @Table(name = "cliente")
@@ -57,6 +57,9 @@ public class Cliente implements Serializable {
     @Size(max = 80)
     @Column(name = "endereco")
     private String endereco;
+    @Size(max = 45)
+    @Column(name = "instrumento")
+    private String instrumento;
 
     public Cliente() {
     }
@@ -129,6 +132,14 @@ public class Cliente implements Serializable {
         this.endereco = endereco;
     }
 
+    public String getInstrumento() {
+        return instrumento;
+    }
+
+    public void setInstrumento(String instrumento) {
+        this.instrumento = instrumento;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -152,7 +163,6 @@ public class Cliente implements Serializable {
     @Override
     public String toString() {
          SimpleDateFormat dateformat = new SimpleDateFormat("dd/MM/yyyy");
-        return idCliente +";"+ nome +";"+ telefone +";"+ sexo +";"+ cpf +";"+ email +";"+ dateformat.format(dataN) +";"+ endereco;
+        return idCliente +";"+ nome +";"+ telefone +";"+ sexo +";"+ cpf +";"+ email +";"+ dateformat.format(dataN) +";"+ endereco +";"+ instrumento;
     }
-    
 }

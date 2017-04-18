@@ -18,7 +18,6 @@
     <body>
 
 
-
         <section class="vh100">
             <h1><br/>Quem Somos?</h1>
         </section>
