@@ -5,6 +5,8 @@
  */
 package controller;
 
+import br.com.utfpr.mavenproject.DAOCliente;
+import br.com.utfpr.mavenproject.DAOGenerico;
 import br.com.utfpr.mavenproject.Cliente;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -22,6 +24,11 @@ import javax.servlet.http.HttpServletResponse;
 public class ServeletAnotation extends HttpServlet {
 
     List<Cliente> lista = new ArrayList<>();
+ 
+       
+
+    
+  
 
     protected void processRequest(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
@@ -57,7 +64,7 @@ public class ServeletAnotation extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-
+        
         String nome = req.getParameter("nome");
         String tel = req.getParameter("tel");
         String sexo = (req.getParameter("genero"));
@@ -67,7 +74,11 @@ public class ServeletAnotation extends HttpServlet {
         String endereco = req.getParameter("endereço");
         String instrumento = req.getParameter("instrumento");
 
+
+        
+        
         Cliente cliente = new Cliente();
+        cliente.setIdCliente(lista.size());
 
         if (nome != null) {
             cliente.setNome(nome);
@@ -96,12 +107,16 @@ public class ServeletAnotation extends HttpServlet {
             cliente.setEndereco(endereco);
         }
         cliente.setInstrumento(instrumento);
-        cliente.setIdCliente(lista.size());
+        
        
         lista.add(cliente);
+
+        
         System.out.println("DEU CERTO!");
         req.setAttribute("lista", lista);
         processRequest(req, resp);
+        
+        
 
     }
 
@@ -109,5 +124,9 @@ public class ServeletAnotation extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+    
+    
+    
 
 }
+
