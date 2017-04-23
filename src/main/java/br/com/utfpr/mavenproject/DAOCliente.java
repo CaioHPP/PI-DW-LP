@@ -16,9 +16,10 @@ public class DAOCliente extends DAOGenerico<Cliente> {
             return 1;
         }
     }
-   // public void RemoveIguais(){
-     //   em.createQuery("DELETE cliente.cliente FROM cliente AS a, cliente AS b WHERE a.cpf=b.cpf AND a.idCliente > b.idCliente");
-    //}
+    public void RemoveIguais(){
+        em.createQuery("delete from Cliente where Cliente.cpf in (select cpf_a from (select cpf as cpf_a from cliente group by Nome\n" +
+"having Count(cpf)>1) as c ) and id_cliente not in (select min_id from (select Min(id_cliente) as min_id from cliente group by Nome having Count(cpf)>1) as d) ;");
+   }
 
     public List<Cliente> listByNome(String nome) {
         return em.createQuery("SELECT e FROM Cliente e WHERE e.nome LIKE :nome").setParameter("nome", "%" + nome + "%").getResultList();
