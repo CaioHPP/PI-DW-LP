@@ -16,6 +16,9 @@ public class DAOCliente extends DAOGenerico<Cliente> {
             return 1;
         }
     }
+   // public void RemoveIguais(){
+     //   em.createQuery("DELETE cliente.cliente FROM cliente AS a, cliente AS b WHERE a.cpf=b.cpf AND a.idCliente > b.idCliente");
+    //}
 
     public List<Cliente> listByNome(String nome) {
         return em.createQuery("SELECT e FROM Cliente e WHERE e.nome LIKE :nome").setParameter("nome", "%" + nome + "%").getResultList();

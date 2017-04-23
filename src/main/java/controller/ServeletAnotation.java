@@ -13,6 +13,7 @@ import java.io.PrintWriter;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,14 +25,11 @@ import javax.servlet.http.HttpServletResponse;
 public class ServeletAnotation extends HttpServlet {
 
     List<Cliente> lista = new ArrayList<>();
- 
-       
-
-    
-  
+    DAOCliente controle = new DAOCliente();
 
     protected void processRequest(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+
         resp.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = resp.getWriter()) {
 
@@ -39,13 +37,62 @@ public class ServeletAnotation extends HttpServlet {
             out.println("<html>");
             out.println("<head>");
             out.println("<title>Gerenciamento</title>");
-            out.println("<link type=\"text/css\" href=\"css.css\" rel=\"stylesheet\">");
+
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>" + " <a href= \"index.jsp\">  Voltar  </a></h1>");
-            out.println(lista);
+            out.println("<table border=\"1\">\n"
+                    + "<tr>\n"
+                    + "<th>IdCliente</th>\n"
+                    + "<th>Nome</th>\n"
+                    + "<th>Telefone</th>\n"
+                    + "<th>Sexo</th>\n"
+                    + "<th>Cpf</th>\n"
+                    + "<th>Email</th>\n"
+                    + "<th>Data de Nascimento</th>\n"
+                    + "<th>Endereço</th>\n"
+                    + "<th>Instrumento</th>\n"
+                    + "</tr>\n");
 
-            out.println("");
+            lista = controle.list();
+            String aux[];
+            String sexo = null;
+            for (Cliente linha : lista) {
+                aux = String.valueOf(linha).split(";");
+                
+                if (Objects.equals(Short.valueOf(aux[3]), Short.valueOf("0"))){
+                    sexo = "Masculino";}
+                if (Objects.equals(Short.valueOf(aux[3]), Short.valueOf("1"))){
+                    sexo = "Feminino";
+                
+                }
+                out.println(
+                        "<tr>"
+                        + "<td>" + Integer.valueOf(aux[0]) + "</td>"
+                        + "\n"
+                        + "<td>"
+                        + aux[1] + "</td>"
+                        + "\n"
+                        + "<td>" + aux[2] + "</td>"
+                        + "\n"
+                        + "<td>" + sexo + "</td>"
+                        + "\n"
+                        + "<td>" + aux[4] + "</td>"
+                        + "\n"
+                        + "<td>" + aux[5] + "</td>"
+                        + "\n"
+                        + "<td>" + aux[6] + "</td>"
+                        + "\n"
+                        + "<td>" + aux[7] + "</td>"
+                        + "\n"
+                        + "<td>" + aux[8] + "</td>"
+                        + "</tr>"
+                        + "<br/>"
+                );
+            }
+
+            out.println("</table>");
+            
 
             out.println("</body>");
             out.println("</html>");
@@ -64,7 +111,7 @@ public class ServeletAnotation extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        
+
         String nome = req.getParameter("nome");
         String tel = req.getParameter("tel");
         String sexo = (req.getParameter("genero"));
@@ -74,11 +121,8 @@ public class ServeletAnotation extends HttpServlet {
         String endereco = req.getParameter("endereço");
         String instrumento = req.getParameter("instrumento");
 
-
-        
-        
         Cliente cliente = new Cliente();
-        cliente.setIdCliente(lista.size());
+        cliente.setIdCliente(controle.autoIdCliente());
 
         if (nome != null) {
             cliente.setNome(nome);
@@ -108,15 +152,11 @@ public class ServeletAnotation extends HttpServlet {
         }
         cliente.setInstrumento(instrumento);
         
-       
-        lista.add(cliente);
-
-        
+        controle.inserir(cliente);
+        //controle.RemoveIguais();
         System.out.println("DEU CERTO!");
-        req.setAttribute("lista", lista);
+        
         processRequest(req, resp);
-        
-        
 
     }
 
@@ -124,9 +164,6 @@ public class ServeletAnotation extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-    
-    
-    
 
 }
 

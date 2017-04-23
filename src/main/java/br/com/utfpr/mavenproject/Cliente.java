@@ -163,6 +163,6 @@ public class Cliente implements Serializable {
     @Override
     public String toString() {
          SimpleDateFormat dateformat = new SimpleDateFormat("dd/MM/yyyy");
-        return idCliente +";"+ nome +";"+ telefone +";"+ sexo +";"+ cpf +";"+ email +";"+ dateformat.format(dataN) +";"+ endereco +";"+ instrumento;
+        return idCliente +";"+ nome +";"+ telefone +";"+ sexo +";"+ cpf +";"+ email +";"+ dateformat.format(dataN) +";"+ endereco +";"+ instrumento+";";
     }
 }
