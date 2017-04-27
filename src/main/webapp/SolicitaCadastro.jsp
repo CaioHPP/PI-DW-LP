@@ -36,7 +36,7 @@ and open the template in the editor.
         </section>
         <section id="form">
            
-            <form action="" method="post">
+            <form action="gerenciamento" method="post">
 
                 Nome: <input type="text" name="nome" placeholder="Nome.." >
                 Telefone: <input type="text" name="tel" id="telefone" size="20" maxlength="14" onkeypress="mascara(this)" placeholder="Telefone.."><br/>
