@@ -61,6 +61,7 @@ and open the template in the editor.
                 </select>
                 <input type="reset" value="Limpar Dados">
                 <input type="submit" value="Próximo" >
+                <a href="SevletExibir"> <input type ="button" value="Exibir"></a>
 
             </form>
         </section>

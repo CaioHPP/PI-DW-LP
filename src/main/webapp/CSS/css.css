@@ -107,6 +107,23 @@ button {
     font-size: 3vw; 
 
 }
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #D3D3D3	}
+
+th {
+    background-color: #A52A2A	;
+    color: white;
+}   
+
 
 #popUpYes:hover
 {
