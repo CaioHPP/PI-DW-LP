@@ -8,7 +8,6 @@ package controller;
 import Entidades.Pessoa;
 import br.com.utfpr.mavenproject.DAOPessoa;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
@@ -17,31 +16,59 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Caio Henrique
  */
-@WebServlet(name = "SevletExibir", urlPatterns = {"/SevletExibir"})
-public class SevletExibir extends HttpServlet {
-    List <Pessoa> clientes = new ArrayList();
+@WebServlet(name = "ServletLogin", urlPatterns = {"/ServletLogin"})
+public class ServletLogin extends HttpServlet {
+
+    List<Pessoa> clientes = new ArrayList();
     DAOPessoa controle = new DAOPessoa();
     Pessoa cliente = new Pessoa();
 
-    
+    List<Pessoa> lista = new ArrayList<>();
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       
-            clientes = controle.listInOrderId();
-            request.setAttribute("clientes", clientes);
-            RequestDispatcher rd = request.getRequestDispatcher("/Exibir.jsp");
-            rd.forward(request, response);
+        lista = controle.list();
+        String aux[];
+        int x = 0;
+        String login = null;
+        String senha = null;
+        for (Pessoa linha : lista) {
+            aux = String.valueOf(linha).split(";");
+            login = request.getParameter("login");
+            senha = request.getParameter("senha");
+
+            if (aux[9].equals(login) && aux[10].equals(senha)) {
+                login = request.getParameter("login");
+                senha = request.getParameter("senha");
+                x = 0;
+                break;
+            } else {
+                x = 1;
+            }
+
+        }
+        if (x==0){
+            HttpSession session = request.getSession();
+            session.setAttribute("session", login);
+            session.setMaxInactiveInterval(30*60);
+            response.sendRedirect("aluno.jsp");
+        }
+        else{
             
+            RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+            rd.forward(request, response);
+        }
         
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *

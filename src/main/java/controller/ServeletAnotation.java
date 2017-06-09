@@ -5,9 +5,9 @@
  */
 package controller;
 
-import br.com.utfpr.mavenproject.DAOCliente;
+import br.com.utfpr.mavenproject.DAOPessoa;
 import br.com.utfpr.mavenproject.DAOGenerico;
-import br.com.utfpr.mavenproject.Cliente;
+import Entidades.Pessoa;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
@@ -24,8 +24,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "EscolaDeMusica", urlPatterns = {"/EscolaDeMusica", "/DomZelitus", "/gerenciamento"})
 public class ServeletAnotation extends HttpServlet {
 
-    List<Cliente> lista = new ArrayList<>();
-    DAOCliente controle = new DAOCliente();
+    List<Pessoa> lista = new ArrayList<>();
+    DAOPessoa controle = new DAOPessoa();
 
     protected void processRequest(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
@@ -43,7 +43,7 @@ public class ServeletAnotation extends HttpServlet {
             out.println("<h1>" + " <a href= \"index.jsp\">  Voltar  </a></h1>");
             out.println("<table border=\"1\">\n"
                     + "<tr>\n"
-                    + "<th>IdCliente</th>\n"
+                    + "<th>IdPessoa</th>\n"
                     + "<th>Nome</th>\n"
                     + "<th>Telefone</th>\n"
                     + "<th>Sexo</th>\n"
@@ -57,7 +57,7 @@ public class ServeletAnotation extends HttpServlet {
             lista = controle.list();
             String aux[];
             String sexo = null;
-            for (Cliente linha : lista) {
+            for (Pessoa linha : lista) {
                 aux = String.valueOf(linha).split(";");
                 
                 if (Objects.equals(Short.valueOf(aux[3]), Short.valueOf("0"))){
@@ -120,9 +120,11 @@ public class ServeletAnotation extends HttpServlet {
         String dataN = req.getParameter("dataN");
         String endereco = req.getParameter("endereço");
         String instrumento = req.getParameter("instrumento");
+        String login = req.getParameter("login");
+        String senha = req.getParameter("senha");
 
-        Cliente cliente = new Cliente();
-        cliente.setIdCliente(controle.autoIdCliente());
+        Pessoa cliente = new Pessoa();
+        cliente.setIdCliente(controle.autoIdPessoa());
 
         if (nome != null) {
             cliente.setNome(nome);
@@ -149,8 +151,13 @@ public class ServeletAnotation extends HttpServlet {
         }
         if (endereco != null) {
             cliente.setEndereco(endereco);
+        }if (login != null) {
+            cliente.setLogin(login);
+        }if (senha != null) {
+            cliente.setSenha(senha);
         }
         cliente.setInstrumento(instrumento);
+       cliente.setTipo("Aluno");
         
         controle.inserir(cliente);
         //controle.RemoveIguais();

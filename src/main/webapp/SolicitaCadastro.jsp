@@ -59,6 +59,8 @@ and open the template in the editor.
                     <option value="piano">Piano</option>
                     <option value="outro">Outro</option>
                 </select>
+                Login: <input type="text" name="login" placeholder="Login..">
+                Senha: <input type="password" name="senha" placeholder="Senha.."
                 <input type="reset" value="Limpar Dados">
                 <input type="submit" value="Próximo" >
                 <a href="SevletExibir"> <input type ="button" value="Exibir"></a>

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.utfpr.mavenproject;
+package Entidades;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
@@ -22,13 +22,13 @@ import javax.validation.constraints.Size;
 
 /**
  *
- * @author Caio
+ * @author Caio Henrique
  */
 @Entity
-@Table(name = "cliente")
+@Table(name = "pessoa")
 @NamedQueries({
-    @NamedQuery(name = "Cliente.findAll", query = "SELECT c FROM Cliente c")})
-public class Cliente implements Serializable {
+    @NamedQuery(name = "Pessoa.findAll", query = "SELECT p FROM Pessoa p")})
+public class Pessoa implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -60,12 +60,34 @@ public class Cliente implements Serializable {
     @Size(max = 45)
     @Column(name = "instrumento")
     private String instrumento;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 45)
+    @Column(name = "login")
+    private String login;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 45)
+    @Column(name = "senha")
+    private String senha;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 45)
+    @Column(name = "tipo")
+    private String tipo;
 
-    public Cliente() {
+    public Pessoa() {
     }
 
-    public Cliente(Integer idCliente) {
+    public Pessoa(Integer idCliente) {
         this.idCliente = idCliente;
+    }
+
+    public Pessoa(Integer idCliente, String login, String senha, String tipo) {
+        this.idCliente = idCliente;
+        this.login = login;
+        this.senha = senha;
+        this.tipo = tipo;
     }
 
     public Integer getIdCliente() {
@@ -140,6 +162,30 @@ public class Cliente implements Serializable {
         this.instrumento = instrumento;
     }
 
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -150,10 +196,10 @@ public class Cliente implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Cliente)) {
+        if (!(object instanceof Pessoa)) {
             return false;
         }
-        Cliente other = (Cliente) object;
+        Pessoa other = (Pessoa) object;
         if ((this.idCliente == null && other.idCliente != null) || (this.idCliente != null && !this.idCliente.equals(other.idCliente))) {
             return false;
         }
@@ -162,7 +208,7 @@ public class Cliente implements Serializable {
 
     @Override
     public String toString() {
-         SimpleDateFormat dateformat = new SimpleDateFormat("dd/MM/yyyy");
-        return idCliente +";"+ nome +";"+ telefone +";"+ sexo +";"+ cpf +";"+ email +";"+ dateformat.format(dataN) +";"+ endereco +";"+ instrumento+";";
+        SimpleDateFormat data = new SimpleDateFormat();
+        return idCliente + ";" + nome + ";" + cpf + ";" + endereco + ";" + email + ";" + instrumento + ";" + telefone + ";" + sexo + ";" + data.format(dataN) + ";" + login + ";" + senha + ";" + tipo + ";";
     }
 }

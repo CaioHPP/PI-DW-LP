@@ -27,7 +27,7 @@
                 ideais que buscavam canalizar o potencial artístico da nossa terra. 
                 Ao longo dos seus 13 anos, a Escola de Música tem se 
                 esforçado em criar meios para melhor capacitar o aluno 
-                que está sendo formado pela nossa Unidade. </p>
+                que está sendo formado pela nossa <a href="Login-Futuro.jsp"> Unidade </a>. </p>
         </section>
         <section class="vh100">
 

@@ -8,9 +8,9 @@
     <body class="backin">
         <img  src="Imagens/Banner.png" alt="" > 
         <div id="divCenter">
-              <form name="input" action="EscolaDeMusica" method="post" >
-                Nome
-                <input type="text" name="nome" value=""><br/>
+              <form name="input" action="ServletLogin" method="post" >
+                Login
+                <input type="text" name="login" value=""><br/>
                 Senha
                 <input type="password" value="" name="senha"><br/>
                 
