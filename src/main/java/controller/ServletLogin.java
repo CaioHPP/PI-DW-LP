@@ -36,41 +36,49 @@ public class ServletLogin extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         lista = controle.list();
         String aux[];
-        int x = 0;
+        String x = "Dados não conferem.";
         String login = null;
         String senha = null;
         for (Pessoa linha : lista) {
             aux = String.valueOf(linha).split(";");
             login = request.getParameter("login");
             senha = request.getParameter("senha");
+            if (login.isEmpty()) {
+                x = "Login Vazio."; //login n digitado   
+            }
+            else if (senha.isEmpty()) {
+                x = "Senha Vazia.";   //senha n digitado
+            }
+            else if (!login.matches("^[a-zA-Z0-9]+$") & login != null & senha != null) {
+
+                x = "Digite somente letras.";
+            }
 
             if (aux[9].equals(login) && aux[10].equals(senha)) {
                 login = request.getParameter("login");
                 senha = request.getParameter("senha");
-                x = 0;
+                x = "ok";
                 break;
-            } else {
-                x = 1;
             }
+            
 
         }
-        if (x==0){
+
+        if (x == "ok") {
             HttpSession session = request.getSession();
             session.setAttribute("session", login);
-            session.setMaxInactiveInterval(30*60);
+            session.setMaxInactiveInterval(30 * 60);
             response.sendRedirect("aluno.jsp");
-        }
-        else{
-            
-            RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+        } else {//Se o login deu certo
+            RequestDispatcher rd = request.getRequestDispatcher("/Login-Futuro.jsp");
+            request.setAttribute("x", x);
             rd.forward(request, response);
         }
-        
     }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
-     * Handles the HTTP <code>GET</code> method.
+     * Handles the HTTP <code>GET</code> method. +
      *
      * @param request servlet request
      * @param response servlet response

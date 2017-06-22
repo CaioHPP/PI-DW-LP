@@ -23,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "EscolaDeMusica", urlPatterns = {"/EscolaDeMusica", "/DomZelitus", "/gerenciamento"})
 public class ServeletAnotation extends HttpServlet {
-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
     List<Pessoa> lista = new ArrayList<>();
     DAOPessoa controle = new DAOPessoa();
 
