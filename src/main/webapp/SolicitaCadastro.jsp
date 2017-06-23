@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ nm<!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -9,7 +9,24 @@ and open the template in the editor.
         <title>Solicitação de Cadastro</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link type="text/css" href="CSS/css.css" rel="stylesheet">
-        <script>
+        <script src="jquery.min.js"></script>
+        <script src="jquery.mask.js"></script>
+        <script type="text/javascript">
+            
+            $(document).ready(function () {
+                $('#telefone').mask('(00)00000-0000');
+            });
+            $(document).ready(function () {
+                $('#cpf').mask('000.000.000-00');
+            });
+            $(document).ready(function () {
+                $('#login').mask('AAAAAAAAAA');
+            });
+            $(document).ready(function () {
+                $('#senha').mask('AAAAAAAAAA');
+            });
+            
+        
             function mascara(telefone) {
                 if (telefone.value.length === 0)
                     telefone.value = "(" + telefone.value; //quando começamos a digitar, o script irá inserir um parênteses no começo do campo.
@@ -59,8 +76,8 @@ and open the template in the editor.
                     <option value="piano">Piano</option>
                     <option value="outro">Outro</option>
                 </select>
-                Login: <input type="text" name="login" placeholder="Login..">
-                Senha: <input type="password" name="senha" placeholder="Senha..">
+                Login: <input id="login" type="text" name="login" placeholder="Login..">
+                Senha: <input id="senha" type="password" name="senha" placeholder="Senha..">
                 <input type="reset" value="Limpar Dados">
                 <input type="submit" value="Próximo" >
                 <a href="SevletExibir"> <input type ="button" value="Exibir"></a>
